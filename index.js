@@ -29,6 +29,9 @@ dbConnection.once("open", () => console.log("Connected to DB!"));
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+// Endpoints for users
+app.use('/api/auth/register', require('./routes/auth/register'));
+app.use('/api/auth/login', require('./routes/auth/login'));
 
 app.listen(port, () => {
     console.log(`LINKtory listening at http://localhost:${port}`);
