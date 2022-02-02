@@ -1,6 +1,0 @@
-heroku login
-create Procfile in directory
-heroku create <app_name>
-git add .
-git commit -m "first commit"
-git push heroku main
