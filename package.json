@@ -4,7 +4,11 @@
   "description": "It is an app to store all your important links at one place",
   "main": "index.js",
   "scripts": {
+    "start":"node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "16.13.1"
   },
   "author": "Prasoon Soni",
   "license": "ISC",
