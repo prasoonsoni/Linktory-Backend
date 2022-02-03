@@ -34,6 +34,11 @@ app.use('/api/auth/register', require('./routes/auth/register'));
 app.use('/api/auth/login', require('./routes/auth/login'));
 app.use('/api/auth/getuser', require('./routes/auth/getuser'));
 
+// Endpoints for links
+app.use('/api/links/addlink', require('./routes/links/addlink'));
+app.use('/api/links/getlinks', require('./routes/links/getlinks'));
+app.use('/api/links/user', require('./routes/links/getlinkbyusername'));
+
 app.listen(port, () => {
     console.log(`LINKtory listening at http://localhost:${port}`);
 })

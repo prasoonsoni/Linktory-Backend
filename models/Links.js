@@ -13,4 +13,6 @@ const LinkSchema = new Schema({
     links:{
         type:[{name:String,link:String}]
     }
-})
+});
+
+module.exports = mongoose.model("Links", LinkSchema);
