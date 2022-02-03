@@ -20,7 +20,7 @@ router.put('/:id', fetchuser, async (req, res) => {
         }
         for (let i = 0; i < getLink.links.length; i++) {
             if (getLink.links[i]._id == req.params.id) {
-                const updateLink = await Links.findOneAndUpdate({ id, username }, { $set: { links: { _id: req.params.id, name:name, link:link} } })
+                const updateLink = await Links.findOneAndUpdate({ id, username }, { $set: { links: [{ _id: req.params.id, name:name, link:link}] } })
                 return res.status(201).json({ success: true, message: "Link successfully updated" });
             }
         }
