@@ -21,7 +21,8 @@ router.use('/', async(req, res)=>{
         // generating token
         const data = {
             user:{
-                id:user.id
+                id:user.id,
+                username:user.username
             }
         }
         const authtoken = jwt.sign(data, process.env.JWT_SECRET_KEY);

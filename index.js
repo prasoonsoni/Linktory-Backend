@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 // Endpoints for users
 app.use('/api/auth/register', require('./routes/auth/register'));
 app.use('/api/auth/login', require('./routes/auth/login'));
+app.use('/api/auth/getuser', require('./routes/auth/getuser'));
 
 app.listen(port, () => {
     console.log(`LINKtory listening at http://localhost:${port}`);
