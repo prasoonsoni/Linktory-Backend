@@ -13,4 +13,6 @@ router.get('/',fetchuser, async(req,res)=>{
         console.log(error.message);
         res.status(500).json({success:false, message:"Some internal server error occured!!"})
     }
-})
+});
+
+module.exports = router;

@@ -13,3 +13,4 @@ const fetchuser = async(req, res, next)=>{
         res.status(500).json({success:false, message:"Some internal server error occured!!"})
     }
 }
+module.exports = fetchuser;
