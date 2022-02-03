@@ -2,7 +2,7 @@ const express = require('express');
 const { links } = require('express/lib/response');
 const router = express.Router();
 const Links = require('../../models/Links');
-const Users = require('../../models/Users');
+const Users = require('../../models/User');
 router.get('/:username', async(req,res)=>{
     try {
         const username = req.params.username;
