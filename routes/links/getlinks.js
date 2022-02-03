@@ -9,7 +9,7 @@ router.get('/', fetchuser, async(req,res)=>{
         if(!links){
             return res.status(400).json({success:false, message:"No links available"});
         }
-        if(!links.links.length==0){
+        if(links.links.length==0){
             return res.status(400).json({success:false, message:"No links available"});
         }
         res.status(201).json({success:true,username:username, links:links.links});
