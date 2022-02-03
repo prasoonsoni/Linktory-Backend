@@ -1,5 +1,4 @@
 const express = require('express');
-const { links } = require('express/lib/response');
 const router = express.Router();
 const Links = require('../../models/Links');
 const Users = require('../../models/User');
@@ -10,6 +9,9 @@ router.get('/:username', async(req,res)=>{
         const links = await Links.findOne({username});
         if(!user){
             return res.status(400).json({success:false, message:"No user available."});
+        }
+        if(!links){
+            return res.status(400).json({success:false, message:"No links available."});
         }
         if(links.links.length==0){
             return res.status(400).json({success:false, message:"No links available."});
