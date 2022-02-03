@@ -14,7 +14,7 @@ router.post('/', fetchuser, async(req,res)=>{
             return res.status(201).json({success:true, message:"Link successfully added"});
         }
         const addNewLink = await Links.create({
-            id:id,
+            user:id,
             username:username,
             links:[{name,link}]
         });

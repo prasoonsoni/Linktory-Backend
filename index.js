@@ -36,6 +36,8 @@ app.use('/api/auth/getuser', require('./routes/auth/getuser'));
 
 // Endpoints for links
 app.use('/api/links/addlink', require('./routes/links/addlink'));
+app.use('/api/links/deletelink', require('./routes/links/deletelink'));
+app.use('/api/links/updatelink', require('./routes/links/updatelink'));
 app.use('/api/links/getlinks', require('./routes/links/getlinks'));
 app.use('/api/links/user', require('./routes/links/getlinkbyusername'));
 
