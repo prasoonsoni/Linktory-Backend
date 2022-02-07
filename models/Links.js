@@ -11,7 +11,8 @@ const LinkSchema = new Schema({
         required:true
     },
     links:{
-        type:[{name:String,link:String}]
+        type:[{name:String,link:String}],
+        default:[]
     }
 });
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../../models/User');
+const Link = require('../../models/Link');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -28,6 +29,11 @@ router.post('/', async(req, res)=>{
             username:username,
             email:email,
             password:securedPassword
+        });
+        // create empty link
+        let link = await Link.create({
+            user:user.id,
+            username:username
         });
         // generating token
         const data = {
