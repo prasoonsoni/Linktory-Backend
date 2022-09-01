@@ -7,7 +7,7 @@ router.get('/', fetchuser, async (req, res) => {
         const { id, username } = req.user;
         const links = await Links.findOne({ id, username });
         if (!links || links.length === 0) {
-            res.status(201).json({ success: true, username: username, links: [] });
+            return res.status(201).json({ success: true, username: username, links: [] });
         }
         res.status(201).json({ success: true, username: username, links: links.links });
     } catch (error) {
