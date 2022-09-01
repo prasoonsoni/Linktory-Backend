@@ -6,6 +6,9 @@ router.get('/', fetchuser, async (req, res) => {
     try {
         const { id, username } = req.user;
         const links = await Links.findOne({ id, username });
+        if (!links || links.length === 0) {
+            res.status(201).json({ success: true, username: username, links: [] });
+        }
         res.status(201).json({ success: true, username: username, links: links.links });
     } catch (error) {
         console.log(error.message);
